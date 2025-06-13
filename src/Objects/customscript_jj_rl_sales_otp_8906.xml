@@ -1,0 +1,22 @@
+<restlet scriptid="customscript_jj_rl_sales_otp_8906">
+  <description></description>
+  <isinactive>F</isinactive>
+  <name>JJ RL Sales OTP-8906</name>
+  <notifyadmins>F</notifyadmins>
+  <notifyemails></notifyemails>
+  <notifyowner>T</notifyowner>
+  <notifyuser>F</notifyuser>
+  <scriptfile>[/SuiteScripts/JobinAndJismi/OTP-8905/jj_rl_third_party_application_otp-8905.js]</scriptfile>
+  <scriptdeployments>
+    <scriptdeployment scriptid="customdeploy_jj_rl_sales_otp_8906">
+      <allemployees>T</allemployees>
+      <allpartners>F</allpartners>
+      <allroles>T</allroles>
+      <audslctrole></audslctrole>
+      <isdeployed>T</isdeployed>
+      <loglevel>DEBUG</loglevel>
+      <status>RELEASED</status>
+      <title>JJ RL Sales OTP-8906</title>
+    </scriptdeployment>
+  </scriptdeployments>
+</restlet>

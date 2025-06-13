@@ -117,7 +117,7 @@ define(['N/record', 'N/search', 'N/log'],
                         itemName: salesOrderRecord.getSublistText({ sublistId: 'item', fieldId: 'item', line: i }),
                         quantity: salesOrderRecord.getSublistValue({ sublistId: 'item', fieldId: 'quantity', line: i }),
                         rate: salesOrderRecord.getSublistValue({ sublistId: 'item', fieldId: 'rate', line: i }),
-                        amount: salesOrderRecord.getSublistValue({ sublistId: 'item', fieldId: 'amount', line: i })
+                        amount: salesOrderRecord.getSublistValue({ sublistId: 'item', fieldId: 'grossamount', line: i })
                     });
                 }
 
