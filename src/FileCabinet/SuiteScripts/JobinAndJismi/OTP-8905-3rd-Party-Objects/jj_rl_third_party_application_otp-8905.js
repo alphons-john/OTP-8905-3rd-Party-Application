@@ -27,8 +27,14 @@ ${OTP-8905}:{Send Sales Order Details to 3rd party application}
 define(['N/record', 'N/search', 'N/log'],
     (record, search, log) => {
 
-        /**
-         * POST entry point - Calls the function to create fulfillment.
+         /**
+         * Defines the function that is executed when a POST request is sent to a RESTlet.
+         * @param {string | Object} requestBody - The HTTP request body; request body is passed as a string when request
+         *     Content-Type is 'text/plain' or parsed into an Object when request Content-Type is 'application/json' (in which case
+         *     the body must be a valid JSON)
+         * @returns {string | Object} HTTP response body; returns a string when request Content-Type is 'text/plain'; returns an
+         *     Object when request Content-Type is 'application/json' or 'application/xml'
+         * @since 2015.2
          * ${OTP-8907}:{Create API for creating the Item Fulfillment}
          */
         const post = (requestBody) => {
@@ -36,8 +42,14 @@ define(['N/record', 'N/search', 'N/log'],
         };
 
         /**
-         * GET entry point - Calls the function to retrieve sales order details.
+         * Defines the function that is executed when a GET request is sent to a RESTlet.
+         * @param {Object} requestParams - Parameters from HTTP request URL; parameters passed as an Object (for all supported
+         *     content types)
+         * @returns {string | Object} HTTP response body; returns a string when request Content-Type is 'text/plain'; returns an
+         *     Object when request Content-Type is 'application/json' or 'application/xml'
+         * @since 2015.2
          * ${OTP-8906}:{Create API for the fetching the Sales order details}
+
          */
         const get = (requestParams) => {
             if (requestParams.tranid) {
@@ -48,7 +60,13 @@ define(['N/record', 'N/search', 'N/log'],
         };
 
         /**
-         * PUT entry point - Calls the function to update fulfillment.
+         * Defines the function that is executed when a PUT request is sent to a RESTlet.
+         * @param {string | Object} requestBody - The HTTP request body; request body are passed as a string when request
+         *     Content-Type is 'text/plain' or parsed into an Object when request Content-Type is 'application/json' (in which case
+         *     the body must be a valid JSON)
+         * @returns {string | Object} HTTP response body; returns a string when request Content-Type is 'text/plain'; returns an
+         *     Object when request Content-Type is 'application/json' or 'application/xml'
+         * @since 2015.2
          * ${OTP-8908}:{Create API for updating the Item Fulfillment}
          */
         const put = (requestBody) => {
@@ -56,7 +74,12 @@ define(['N/record', 'N/search', 'N/log'],
         };
 
         /**
-         * DELETE entry point - Calls the function to delete fulfillment.
+         * Defines the function that is executed when a DELETE request is sent to a RESTlet.
+         * @param {Object} requestParams - Parameters from HTTP request URL; parameters are passed as an Object (for all supported
+         *     content types)
+         * @returns {string | Object} HTTP response body; returns a string when request Content-Type is 'text/plain'; returns an
+         *     Object when request Content-Type is 'application/json' or 'application/xml'
+         * @since 2015.2
          * ${OTP-8909}:{API for the Deleting the Item fulfillment}
          */
         const doDelete = (requestParams) => {
@@ -117,7 +140,7 @@ define(['N/record', 'N/search', 'N/log'],
                         itemName: salesOrderRecord.getSublistText({ sublistId: 'item', fieldId: 'item', line: i }),
                         quantity: salesOrderRecord.getSublistValue({ sublistId: 'item', fieldId: 'quantity', line: i }),
                         rate: salesOrderRecord.getSublistValue({ sublistId: 'item', fieldId: 'rate', line: i }),
-                        amount: salesOrderRecord.getSublistValue({ sublistId: 'item', fieldId: 'grossamount', line: i })
+                        grossAmount: salesOrderRecord.getSublistValue({ sublistId: 'item', fieldId: 'amount', line: i })
                     });
                 }
 
