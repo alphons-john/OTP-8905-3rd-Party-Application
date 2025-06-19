@@ -3,7 +3,7 @@
  * @NScriptType Restlet
  */
 /**********************************************************************************************
-* 
+*************** 
 *
 *
 *
@@ -23,7 +23,9 @@ ${OTP-8905}:{Send Sales Order Details to 3rd party application}
 ** REVISION HISTORY
  *
 * @version 1.0 10-June-2025 : Created the initial build by JJ0403
-*/
+**************************************************************************************************
+******************/
+
 define(['N/record', 'N/search', 'N/log'],
     (record, search, log) => {
 
